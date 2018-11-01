@@ -1,17 +1,5 @@
-# Welcome to MkDocs
+# Desarrollo Web
+## Introducción
+Estás son mis notas personales en cuanto a desarrollo web.
 
-For full documentation visit [mkdocs.org](https://mkdocs.org).
-
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+Proceso de aprendizaje para un [Frontend web developer](https://medium.com/tech-tajawal/modern-frontend-developer-in-2018-4c2072fa2b9c).
