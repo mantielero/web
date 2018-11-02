@@ -19,20 +19,20 @@ $ npm init -y
 Esto genera un fichero **package.json**.
 
 ??? note package.json
-```js
-{
-  "name": "pwa",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
-}
-```
+    ```js
+    {
+      "name": "pwa",
+      "version": "1.0.0",
+      "description": "",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "keywords": [],
+      "author": "",
+      "license": "ISC"
+    }
+    ```
 
 y creamos la siguiente estructura:
 ```
