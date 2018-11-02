@@ -1,8 +1,8 @@
 site_name: Desarrollo Web
 
 theme:
-   - name: mkdocs
-   - highlightjs: true
+- name: mkdocs
+- highlightjs: true
 
 nav:
 - 'Introducción': 'introduccion.md'
@@ -11,8 +11,8 @@ nav:
   - 'Elm': 'webpack_elm.md'
 
 markdown_extensions:
-  - toc:
-    permalink: True
+- toc:
+  permalink: "#"
 
 plugins:
-  - search
+- search
