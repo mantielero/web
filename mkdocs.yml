@@ -1,13 +1,19 @@
 site_name: Desarrollo Web
 
 theme:
+   - name: mkdocs
    - highlightjs: true
 
 nav:
-   - Home: introduccion.md
+   - Introducción: introduccion.md
    - Webpack:
       - React: webpack.md
       - Elm: webpack_elm.md
 
 markdown_extensions:
   - codehilite
+    - toc:
+      permalink: 
+
+plugins:
+  - search
