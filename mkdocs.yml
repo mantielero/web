@@ -1,10 +1,10 @@
 site_name: Desarrollo Web
 
 theme:
-  name: mkdocs
+  name: material
 #  highlightjs: true
 
-nav:
+pages:
   - Introduccion: introduccion.md
   - Webpack:
     - React: webpack.md
