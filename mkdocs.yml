@@ -12,8 +12,8 @@ nav:
 
 markdown_extensions:
   - codehilite
-    - toc:
-      permalink: True
+  - toc:
+    permalink: True
 
 plugins:
   - search
