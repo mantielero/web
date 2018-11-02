@@ -18,7 +18,7 @@ $ npm init -y
 
 Esto genera un fichero **package.json**.
 
-??? package.json
+??? note package.json
 ```js
 {
   "name": "pwa",
