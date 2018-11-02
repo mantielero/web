@@ -1,7 +1,7 @@
 site_name: Desarrollo Web
 
 theme:
-  name: material
+  name: mkdocs
 #  highlightjs: true
 
 pages:
