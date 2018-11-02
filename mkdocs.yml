@@ -2,9 +2,12 @@ site_name: Desarrollo Web
 
 theme:
    - highlightjs: true
-   
+
 nav:
    - Home: introduccion.md
    - Webpack:
       - React: webpack.md
       - Elm: webpack_elm.md
+
+markdown_extensions:
+  - codehilite
