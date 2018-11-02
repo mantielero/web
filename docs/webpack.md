@@ -18,6 +18,10 @@ $ npm init -y
 
 Esto genera un fichero **package.json**.
 
+??? note "Prueba"
+    Prueba1
+
+
 ??? note "package.json"
     Prueba:
     ```js
