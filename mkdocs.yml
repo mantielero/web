@@ -13,7 +13,7 @@ nav:
 markdown_extensions:
   - codehilite
     - toc:
-      permalink: #
+      permalink: True
 
 plugins:
   - search
