@@ -206,22 +206,26 @@ Cambiamos el fichero **src/cliente/app/index.jsx**:
 [Building a React app with webpack](https://egghead.io/lessons/react-building-a-react-js-app-up-and-running-with-react-and-webpack)
 
 ## Pregenerados
-Lo más rápido y sencillo es clonar por ejemplo el siguiente repositorio::
+Lo más rápido y sencillo es clonar por ejemplo el siguiente repositorio:
+```
+$ git clone https://github.com/react-toolbox/react-toolbox-example
+```
 
-  $ git clone https://github.com/react-toolbox/react-toolbox-example
-
-También podemos clonar el repositorio::
-
-  $ git clone https://github.com/callemall/material-ui.git
+También podemos clonar el repositorio:
+```
+$ git clone https://github.com/callemall/material-ui.git
+```
 
 y copiar el directorio::
+```
+$ cp -R material-ui/material-ui/examples/webpack-example ./
+```
 
-  $ cp -R material-ui/material-ui/examples/webpack-example ./
-
-La primera es una aplicación webpack/react-toolbox que funciona correctamente y que está correctamente configurada. Para hacerla funcionar, basta con::
-
-  $ npm install
-  $ npm start
+La primera es una aplicación webpack/react-toolbox que funciona correctamente y que está correctamente configurada. Para hacerla funcionar, basta con:
+```
+$ npm install
+$ npm start
+```
 
 Veremos la aplicación funcionando en http://localhost:8080
 
