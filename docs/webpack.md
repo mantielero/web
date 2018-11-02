@@ -64,7 +64,7 @@ configuramos **.babelrc**:
 
 y añadimos en webpack la configuración del loader:
 
-```js hl_lines="13 21"
+```js hl_lines="13-21"
 var webpack = require('webpack');
 var path = require('path');
 
