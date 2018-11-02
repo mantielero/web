@@ -12,6 +12,7 @@ nav:
 
 markdown_extensions:
 - admonition
+- codehilite
 
 plugins:
 - search
