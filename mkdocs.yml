@@ -11,8 +11,6 @@ nav:
   - 'Elm': 'webpack_elm.md'
 
 markdown_extensions:
-- toc:
-  permalink: "#"
 - admonition
 
 plugins:
