@@ -16,14 +16,9 @@ $ cd proyecto
 $ npm init -y
 ```
 
-Esto genera un fichero **package.json**.
-
-??? note "Prueba"
-    Prueba1
-
+que genera el fichero:
 
 ??? note "package.json"
-    Prueba:
     ```js
     {
       "name": "pwa",
