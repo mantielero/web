@@ -5,10 +5,10 @@ theme:
   highlightjs: true
 
 nav:
-  - Introducción: introduccion.md
-  - Webpack:
-    - React: webpack.md
-    - Elm: webpack_elm.md
+  Introducción: introduccion.md
+  Webpack:
+    React: webpack.md
+    Elm: webpack_elm.md
 
 markdown_extensions:
 - admonition
