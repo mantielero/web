@@ -10,7 +10,7 @@ Es un "code bundler". Sigue todo el árbol de dependencias para generar un paque
 ## Partimos de un proyecto
 
 Iniciamos el proyecto::
-```
+```bash
 $ mkdir proyecto
 $ cd proyecto
 $ npm init -y
