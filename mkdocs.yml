@@ -4,7 +4,7 @@ theme:
   name: material
 #  highlightjs: true
 
-pages:
+nav:
   - Introduccion: introduccion.md
   - Webpack:
     - React: webpack.md
