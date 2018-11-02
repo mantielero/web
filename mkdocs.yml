@@ -5,7 +5,7 @@ theme:
   highlightjs: true
 
 nav:
-  Introducción: introduccion.md
+  Introduccion: introduccion.md
   Webpack:
     React: webpack.md
     Elm: webpack_elm.md
