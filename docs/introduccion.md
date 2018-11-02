@@ -15,9 +15,9 @@ Es necesario estar familiarizado con [HTML5](https://developer.mozilla.org/en-US
 
 Preferentemente usaremos frameworks en los que diseñadores profesionales ya han hecho el trabajo duro.
 #### JavaScript
-Es lo que hay. No me gusta nada. Tiene muchas cosas feas. Tantas que han nacido muchos lenguajes que compilan a [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript).
+El ES5 era horrible. Tiene muchas tantas cosas feas que han nacido muchos lenguajes que compilan a [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript).
 
-Muchos de sus problemas se mitigan con ES6 (ECMAScript6).
+El [ES6](https://codeburst.io/es6-tutorial-for-beginners-5f3c4e7960be) tiene buena pinta. Recomiendo darle una oportunidad a ES6.
 
 Javascript puede ejecutarse en un navegador o con [nodejs](https://nodejs.org/es/).
 
