@@ -98,8 +98,8 @@ Ahora requerimos un **fichero.html** sobre el que cargaremos el fichero javascri
   </html>
 ```
 
-index.js
---------
+## index.js
+
 
 Este es el punto de entrada que buscará webpack (lo definimos en el fichero de configuración) para crear en bundle.
 
@@ -123,8 +123,7 @@ Un ejemplo es el siguiente:
 
 En el que se está requiriendo CSS, el HTML raíz que representa nuestra aplicación y el fichero Elm que se montará en componente del .html con identificador "main" en este ejemplo.
 
-package.json
-------------
+## package.json
 
 Podemos modificar la sección **script** para que aparezcan las tareas típicas que disponemos con webpack:
 
@@ -158,8 +157,7 @@ De esta forma podremos:
   $ npm run dev
 ```
 
-Uso
----
+## Uso
 
 Normalmente ejecutaremos nuestro servidor de mentira en una consola::
 ```
