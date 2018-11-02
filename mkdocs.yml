@@ -6,9 +6,16 @@ theme:
 
 nav:
   - Introduccion: introduccion.md
-  - Webpack:
-    - React: webpack.md
+  - Proyecto: proyecto.md
+  - Bundling:
+    - Webpack: webpack.md
+    - Mínimo: webpack_minimo.md
+    - Minimizer: webpack_minimizer.md
+    - HTML: webpack_html.md
+    - React: webpack_react.md
     - Elm: webpack_elm.md
+  - Aplicaciones:
+    - Escritorio: escritorio.md
 
 markdown_extensions:
 - admonition
