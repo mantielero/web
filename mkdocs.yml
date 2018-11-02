@@ -5,10 +5,10 @@ theme:
    - highlightjs: true
 
 nav:
-   - 'Introducción': 'introduccion.md'
+   - 'Introducción': 'docs/introduccion.md'
    - 'Webpack':
-      - React: 'webpack.md'
-      - Elm: 'webpack_elm.md'
+      - React: 'docs/webpack.md'
+      - Elm: 'docs/webpack_elm.md'
 
 markdown_extensions:
   - toc:
