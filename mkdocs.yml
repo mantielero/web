@@ -1,5 +1,8 @@
 site_name: Desarrollo Web
 
+theme:
+   - highlightjs: true
+   
 nav:
    - Home: introduccion.md
    - Webpack:
