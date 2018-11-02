@@ -13,6 +13,7 @@ nav:
 markdown_extensions:
 - toc:
   permalink: "#"
+- admonition
 
 plugins:
 - search
