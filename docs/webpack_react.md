@@ -24,7 +24,12 @@ Un [buen tutorial](https://www.valentinog.com/blog/react-webpack-babel/).
 
 ## Comprobamos la instalación
 
-En lugar del fichero, *index.js* escribimos el fichero **src/client/app/index.jsx**. Modificamos la configuración de webpack para que haga la compilación de los .jsx.
+En lugar del fichero, *index.js* escribimos el fichero **src/client/app/index.jsx**.
+
+También modificamos la configuración de webpack para que:
+
+1. Compile los ficheros .jsx y los convierta en .js (también de ES6 a ES5).
+2. Usamos [html-webpack-template](https://www.npmjs.com/package/html-webpack-template) para que genere `<div id=app />`
 
 ```js tab="webpack.config.js"
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
@@ -97,6 +102,19 @@ En la configuración de webpack tenemos una serie de reglas (module -> rules) qu
 2. Convierte los ficheros .js en formato ES6 a formato ES5.
 
 A partir del fichero **index.jsx** webpack generará el fichero **bundle.js**.
+
+
+
+## Desarrollando en React
+### Introducción
+Una cosa que estaba muy bien de Elm es el hecho de no modificar el estado (teníamos que crear un estado nuevo).
+### Principio: Container/Presentational
+En donde:
+
+- Container: es el componente que contiene el estado y las funciones que controlan el estado.
+- Presentational: es la parte de visualización.
+
+> Curioso porque parece que uno de los principios de .jsx es precisamente que la lógica y la visualización van muy vinculadas y por ello se pone todo junto.
 
 
 

@@ -19,6 +19,7 @@ El ES5 era horrible. Tiene muchas tantas cosas feas que han nacido muchos lengua
 El [ES6](https://codeburst.io/es6-tutorial-for-beginners-5f3c4e7960be) tiene buena pinta. Recomiendo darle una oportunidad a ES6:
 - [ES6 features](http://es6-features.org/)
 - [ES6 tutorial](https://www.tutorialspoint.com/es6/)
+- [Re-introducción a JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
 
 Javascript puede ejecutarse en un navegador o con [nodejs](https://nodejs.org/es/).
 
@@ -106,3 +107,8 @@ Yo estoy usando **atom**, que es muy extensible. Por ejemplo, puede extenderse c
 
 ## Primeros pasos
 Instalar **atom** y **nodejs**. Así tendremos instalado el gestor de paquetes **npm**.
+
+
+# Librerías interesantes
+Redux
+Immutable (para manejar el estado)

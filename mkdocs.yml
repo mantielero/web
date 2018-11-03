@@ -14,8 +14,12 @@ nav:
     - HTML: webpack_html.md
     - React: webpack_react.md
     - Elm: webpack_elm.md
+  - Vue:
+    - Vue Intro: vue_intro.md
   - Aplicaciones:
     - Escritorio: escritorio.md
+  - Libraries:
+    - Editores de texto: editores_texto.md
 
 markdown_extensions:
 - admonition

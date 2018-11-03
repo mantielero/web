@@ -42,61 +42,6 @@ en donde:
 - La librería *path* sirve para componer las rutas de *BUILD_DIR* y *APP_DIR*. Vemos que la aplicación cliente se guarda en *src/client/app*.
 - En la variable *config* e identifica el punto de entrada *entry* y la salida *output* (se indica la ruta y el nombre del fichero *bundle.js*).
 
-!!! note ""
-    Aquí se asume como punto de entrada un fichero con extensión .jsx. Esto requiere el uso de React.
-
-
-## Babel
-### Instalación
-Instalaremos:
-
-- babel-loader: es un plugin de webpack para Babel. Babel es un transpiler que convierte código ES6 en ES5. Esto posibilita que código escrito en ES6 sea soportado por navegadores que no lo soportan.
-- babel-preset-es2015: preset para todos los plugins es2015.
-- babel-preset-react: preset de una serie de plugins (entre ellos para transformar .jsx).
-
-Se instala el loader y los presets:
-```
-$ npm i babel-loader babel-preset-es2015 babel-preset-react --save-dev
-```
-
-### Configuración
-Configuramos **.babelrc**:
-
-```js
-{
-  "presets" : ["es2015", "react"]
-}
-```
-
-y añadimos en webpack la configuración del loader:
-
-??? note "webpack.config.js"
-    ```js hl_lines="13 14 15 16 17 18 19 20 21"
-    var webpack = require('webpack');
-    var path = require('path');
-
-    var BUILD_DIR = path.resolve(__dirname, 'src/client/public');
-    var APP_DIR = path.resolve(__dirname, 'src/client/app');
-
-    var config = {
-      entry: APP_DIR + '/index.jsx',
-      output: {
-        path: BUILD_DIR,
-        filename: 'bundle.js'
-      },
-      module : {
-          loaders : [
-            {
-              test : /\.jsx?/,
-              include : APP_DIR,
-              loader : 'babel'
-            }
-          ]
-        }
-    };
-
-    module.exports = config;
-    ```
 
 ## Ejecutar
 Para construir el proyecto, ejecutamos:
@@ -104,6 +49,38 @@ Para construir el proyecto, ejecutamos:
 $ node_modules/.bin/webpack -p
 ```
 
+Si tenemos instalado *webpack-cli* podemos llamarlo más cómodamente con *npm*:
+```js package.json
+"scripts": {
+  "build": "webpack --mode production"
+}
+```
+
+mediante:
+```bash
+$ npm run build
+```
+
+## Servidor de desarrollo
+Para evitar estar ejecutando `npm run build` constantemente, interesa instalar el servidor de desarrollo:
+```bash
+npm i webpack-dev-server --save-dev
+```
+
+Y configuramos en:
+```js package.json hl_lines="3"
+"scripts": {
+  "build": "webpack --mode production",
+  "start": "webpack-dev-server --open --mode development"
+}
+```
+
+De forma que ejecutaremos:
+```bash
+npm run start
+```
+
+y siempre que editemos un fichero del proyecto se actualizará el resultado del proyecto automáticamente.
 
 
 # Enlaces interesantes
