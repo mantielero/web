@@ -61,8 +61,9 @@ ngrok http 8080
 Así podremos testear tanto en el navegador como directamente en un móvil o tablet.
 
 ## Creamos el esqueleto de las vistas
+Dentro de **src/components/**:
 
-```vue tab="src/components/HomeView.vue"
+```vue tab="HomeView.vue"
 <template>
   <ul class="list">
   </ul>
@@ -79,7 +80,7 @@ export default {
 </style>
 ```
 
-```vue tab="src/component/DetailView.vue"
+```vue tab="DetailView.vue"
 <template>
   <div class="card-image">
   </div>
@@ -92,7 +93,7 @@ export default {
 </style>
 ```
 
-```vue tab="src/components/PostView.vue"
+```vue tab="PostView.vue"
 <template>
   <div class="waiting">
     Not yet available
@@ -109,6 +110,12 @@ export default {
   }
 </style>
 ```
+
+
+
+> Hay que borrar el fichero **Hello.vue** que ya no es necesario.
+
+## Rutado de las vistas
 
 ```js tab="src/router/index.js"
 import Vue from 'vue'
@@ -139,7 +146,3 @@ export default new Router({
   ]
 })
 ```
-
-> Hay que borrar el fichero **Hello.vue** que ya no es necesario.
-
-## Creamos el rutado
