@@ -22,6 +22,8 @@ nav:
     - Editores de texto: editores_texto.md
   - PWA:
     - Vue: pwa_vue.md
+  - UI Components:
+    - Intro: ui_intro.md
 
 markdown_extensions:
 - admonition
