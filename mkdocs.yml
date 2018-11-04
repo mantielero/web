@@ -20,6 +20,8 @@ nav:
     - Escritorio: escritorio.md
   - Libraries:
     - Editores de texto: editores_texto.md
+  - PWA:
+    - Vue: pwa_vue.md
 
 markdown_extensions:
 - admonition
