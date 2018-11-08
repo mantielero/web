@@ -759,3 +759,57 @@ export default new Vuex.Store({
 - mutations are needed to change that state.
 - actions are needed to dispatch mutations.
 - And getters are needed to get the store.
+
+
+# Firebase
+## Instalación
+Inslamos **firebase-tools**:
+
+```
+yaourt -S firebase-tools
+```
+
+> Otra opción: `npm i -g firebase-tools`
+
+Hacemos:
+
+```
+npm install --save firebase
+```
+
+y añadimos en `src/main.js` lo siguiente:
+
+```js
+import firebase from 'firebase'
+
+firebase.initializeApp({
+  apiKey: 'YOUR_API_KEY',
+  authDomain: 'YOUR_AUTH_DOMAIN',
+  databaseURL: 'YOUR_DATABASE_URL',
+  projectId: 'YOUR_PROJECT_ID'
+})
+```
+
+### Si falla la instalación
+https://github.com/grpc/grpc/issues/15288
+
+Precompilados:
+
+https://storage.googleapis.com/grpc-precompiled-binaries/node/grpc/v1.10.1/node-v64-linux-x64-glibc.tar.gz
+
+### Workaround
+```
+env CXXFLAGS="-Wno-ignored-qualifiers -Wno-stringop-truncation -Wno-cast-function-type" npm install grpc@1.11.3
+```
+
+## Consola Firebase
+Vamos a [Firebase](https://firebase.google.com). Arriba a la derecha vamos a [Ir a la consola](https://console.firebase.google.com).
+
+Creamos un proyecto y accedemos a él.
+
+1. Autentificación > Método de acceso: habilitamos el método email/password.
+2. Autentificación: arriba a la derecha **Configuración Web** y copiamos los detalles.
+
+# Vuex
+
+> Note: I highly recommend to install extension for Chrome/Firefox called **Vue.js devtools**. This extension will help you in debugging your Vue.js application and to see what is happening in Vuex store.
