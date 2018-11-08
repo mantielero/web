@@ -1,6 +1,7 @@
 # Agenda
 ## Introducción
 [PWA Vue Webpack Material Design Lite - Parte 1](https://blog.sicara.com/a-progressive-web-application-with-vue-js-webpack-material-design-part-1-c243e2e6e402<)
+
 [SPA - vue - firebase - vuex - vuetify](https://medium.com/@oleg.agapov/basic-single-page-application-using-vue-js-and-firebase-part-1-9e4c0c11a228)
 
 El objetivo va a ser crear una aplicación que sea una agenda que:
@@ -157,6 +158,21 @@ import HelloWorld from './components/HelloWorld'
 ## Crear vistas
 Lo primero es crear un pequeño "borrador" de las vistas que vamos a necesitar.
 
+La idea es tener una página principal que tiene cierto layaut:
+
+- toolbar
+- contenido
+- sidebar
+
+En el sidebar daremos la opción de sign-up y sign-in en firebase:
+
+- sign-up: no requiere autentificación
+- sign-in: no requiere autentificación
+- hola: requiere autentificación
+
+[ejemplo](https://medium.com/@anas.mammeri/vue-2-firebase-how-to-build-a-vue-app-with-firebase-authentication-system-in-15-minutes-fdce6f289c3c)
+
+
 ## Página principal
 El layout consistirá en:
 
@@ -256,6 +272,10 @@ export default {
 
 
 > Hay que borrar el fichero **Hello.vue** que ya no es necesario.
+
+## View: Sign up
+En *src/components*:
+
 
 ## Rutado de las vistas
 
