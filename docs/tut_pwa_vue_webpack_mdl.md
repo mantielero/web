@@ -351,3 +351,411 @@ Y se actualiza a:
   </div>
 </template>
 ```
+
+# Routing
+## Introducción
+El objetivo es presentar.
+
+## Contenido por defecto
+Es:
+
+```js tab="./src/router.js"
+import Vue from 'vue'
+import Router from 'vue-router'
+import Home from './views/Home.vue'
+
+Vue.use(Router)
+
+export default new Router({
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes: [
+    {
+      path: '/',
+      name: 'home',
+      component: Home
+    },
+    {
+      path: '/about',
+      name: 'about',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+    }
+  ]
+})
+```
+
+## Nuevo contenido
+Será:
+
+```js tab="./src/router.js"
+import Vue from 'vue'
+import Router from 'vue-router'
+
+import Signin from './components/Signin'
+import Signup from './components/Signup'
+import Home from './components/Home'
+import Landing from './components/Landing'
+
+Vue.use(Router)
+
+export default new Router({
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes: [
+    {
+      path: '/',
+      name: 'landing',
+      component: Landing
+    },
+    {
+      path: '/signin',
+      name: 'signin',
+      component: Signin
+    },
+    {
+      path: '/signup',
+      name: 'signup',
+      component: Signup
+    },
+    {
+      path: '/home',
+      name: 'home',
+      component: Home
+    },
+    {
+      path: '/about',
+      name: 'about',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+    }
+  ]
+})
+```
+
+Podemos probar que funciona con:
+
+- http://localhost:8080/: landing
+- http://localhost:8080/signin: signin
+- http://localhost:8080/signup: signup
+- http://localhost:8080/home: home (una vez autentificado)
+
+## Añadimos un menú
+Así evitamos tener que usar las rutas anteriores.
+
+Asociamos el título a la página de landing:
+
+```vue hl_lines="2 5"
+<v-toolbar-title class="headline text-uppercase">
+  <router-link to="/" tag="span" style="cursor: pointer">
+    <span>Agenda</span>
+    <span class="font-weight-light">Prueba</span>
+  </router-link>
+</v-toolbar-title>
+```
+
+
+
+Añadimos la lista de menuItems en App.vue.
+
+# Estado - Layout + Routing + Vistas
+La app más el routing:
+
+```js tab="main.js"
+import Vue from 'vue'
+import './plugins/vuetify'
+import App from './App.vue'
+import router from './router'
+import store from './store'
+
+
+Vue.config.productionTip = false
+
+new Vue({
+  router,
+  store,
+  render: h => h(App)
+}).$mount('#app')
+```
+
+```js tab="router.js"
+import Vue from 'vue'
+import Router from 'vue-router'
+
+import Signin from './components/Signin'
+import Signup from './components/Signup'
+import Home from './components/Home'
+import Landing from './components/Landing'
+
+Vue.use(Router)
+
+export default new Router({
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes: [
+    {
+      path: '/',
+      name: 'landing',
+      component: Landing
+    },
+    {
+      path: '/signin',
+      name: 'signin',
+      component: Signin
+    },
+    {
+      path: '/signup',
+      name: 'signup',
+      component: Signup
+    },
+    {
+      path: '/home',
+      name: 'home',
+      component: Home
+    },
+    {
+      path: '/about',
+      name: 'about',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+    }
+  ]
+})
+```
+
+```vue tab="App.vue"
+<template>
+  <v-app>
+
+    <!--    SIDEBAR   -->
+    <!--span class="hidden-sm-and-up"-->
+      <v-navigation-drawer v-model="sidebar" app>
+        <v-toolbar flat>
+          <v-list>
+            <v-list-tile>
+              <v-list-tile-title class="title">
+                Menu
+              </v-list-tile-title>
+            </v-list-tile>
+          </v-list>
+        </v-toolbar>
+
+        <v-divider></v-divider>
+
+          <v-list>
+            <v-list-tile
+              v-for="item in menuItems"
+              :key="item.title"
+              :to="item.path">
+              <v-list-tile-action>
+                <v-icon>{{ item.icon }}</v-icon>
+              </v-list-tile-action>
+              <v-list-tile-content>{{ item.title }}</v-list-tile-content>
+            </v-list-tile>
+          </v-list>
+
+      </v-navigation-drawer>
+    <!--/span-->
+
+    <!--   TOOLBAR   -->
+    <v-toolbar app>
+
+      <v-icon @click="sidebar = !sidebar">menu</v-icon>
+
+      <v-toolbar-title class="headline text-uppercase">
+        <router-link to="/" tag="span" style="cursor: pointer">
+          <span>Agenda</span>
+          <span class="font-weight-light">Prueba</span>
+        </router-link>
+      </v-toolbar-title>
+
+    </v-toolbar>
+
+    <v-content>
+      <router-view></router-view>
+    </v-content>
+  </v-app>
+</template>
+
+<script>
+export default {
+  name: 'App',
+  components: {
+
+  },
+  data () {
+    return {
+      //
+        sidebar: false,
+        menuItems: [
+          { title: 'Home', path: '/home', icon: 'home' },
+          { title: 'Sign Up', path: '/signup', icon: 'face' },
+          { title: 'Sign In', path: '/signin', icon: 'lock_open' }
+        ]
+    }
+  }
+}
+</script>
+```
+
+Y las cuatro vistas definidas en los componentes:
+
+```vue tab="Landing.vue"
+<template>
+  <v-container fluid>
+    <v-layout column>
+      <v-flex xs12 class="text-xs-center" mt-5>
+        <h1>Landing page</h1>
+      </v-flex>
+    </v-layout>
+  </v-container>
+</template>
+
+<script>
+export default {}
+</script>
+```
+
+```vue tab="Signup.vue"
+<template>
+  <v-container fluid>
+    <v-layout row wrap>
+      <v-flex xs12 class="text-xs-center" mt-5>
+        <h1>Sign Up</h1>
+      </v-flex>
+      <v-flex xs12 sm6 offset-sm3 mt-3>
+        <form>
+          <v-layout column>
+            <v-flex>
+              <v-text-field
+                name="email"
+                label="Email"
+                id="email"
+                type="email"
+                required></v-text-field>
+            </v-flex>
+            <v-flex>
+              <v-text-field
+                name="password"
+                label="Password"
+                id="password"
+                type="password"
+                required></v-text-field>
+            </v-flex>
+            <v-flex>
+              <v-text-field
+                name="confirmPassword"
+                label="Confirm Password"
+                id="confirmPassword"
+                type="password"
+                required
+                ></v-text-field>
+            </v-flex>
+            <v-flex class="text-xs-center" mt-5>
+              <v-btn color="primary" type="submit">Sign Up</v-btn>
+            </v-flex>
+          </v-layout>
+        </form>
+      </v-flex>
+    </v-layout>
+  </v-container>
+</template>
+
+<script>
+export default {}
+</script>
+```
+
+```vue tab="Signin.vue"
+<template>
+  <v-container fluid>
+    <v-layout row wrap>
+      <v-flex xs12 class="text-xs-center" mt-5>
+        <h1>Sign In</h1>
+      </v-flex>
+      <v-flex xs12 sm6 offset-sm3 mt-3>
+        <form>
+          <v-layout column>
+            <v-flex>
+              <v-text-field
+                name="email"
+                label="Email"
+                id="email"
+                type="email"
+                required></v-text-field>
+            </v-flex>
+            <v-flex>
+              <v-text-field
+                name="password"
+                label="Password"
+                id="password"
+                type="password"
+                required></v-text-field>
+            </v-flex>
+            <v-flex class="text-xs-center" mt-5>
+              <v-btn color="primary" type="submit">Sign In</v-btn>
+            </v-flex>
+          </v-layout>
+        </form>
+      </v-flex>
+    </v-layout>
+  </v-container>
+</template>
+
+<script>
+export default {}
+</script>
+```
+
+```vue tab="Home.vue"
+<template>
+  <v-container fluid>
+    <v-layout row wrap>
+      <v-flex xs12 class="text-xs-center" mt-5>
+        <h1>Home page</h1>
+      </v-flex>
+      <v-flex xs12 class="text-xs-center" mt-3>
+        <p>This is a user's home page</p>
+      </v-flex>
+    </v-layout>
+  </v-container>
+</template>
+
+<script>
+export default {}
+</script>
+```
+
+# Vuex
+En el fichero `./src/store.js` tenemos el código asociado a Vuex.
+
+```js tab="./src/store.js"
+import Vue from 'vue'
+import Vuex from 'vuex'
+
+Vue.use(Vuex)
+
+export default new Vuex.Store({
+  state: {
+
+  },
+  mutations: {
+
+  },
+  actions: {
+
+  }
+})
+```
+
+
+- state is an object with application data.
+- mutations are needed to change that state.
+- actions are needed to dispatch mutations.
+- And getters are needed to get the store.
