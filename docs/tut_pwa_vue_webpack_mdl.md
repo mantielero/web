@@ -1,4 +1,27 @@
 # Agenda
+## Otras versiones de Node
+Podemos usar nvm para instalar diferentes versiones de nvm.
+
+Ejecutamos primero:
+
+```
+source /usr/share/nvm/init-nvm.sh
+```
+
+Instalamos la versión v10.3:
+
+```
+nvm install 10.3
+```
+
+E indicamos que la use:
+
+```
+nvm use 10.3
+```
+
+> Instalamos la version v10.3 porque con ella podemos instalar **grpc** (necesario para poder instalar **firebase**)
+
 ## Introducción
 [PWA Vue Webpack Material Design Lite - Parte 1](https://blog.sicara.com/a-progressive-web-application-with-vue-js-webpack-material-design-part-1-c243e2e6e402<)
 
