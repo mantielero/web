@@ -27,6 +27,7 @@ nav:
   - Tutorial Vue:
     - Infraestructura: tut_vue_infraestructura.md
     - Código fuente: tut_vue_source_code.md
+    - Explicación: tut_vue_explicacion.md
     - PWA Vue Webpack MDL: tut_pwa_vue_webpack_mdl.md
 
 markdown_extensions:
