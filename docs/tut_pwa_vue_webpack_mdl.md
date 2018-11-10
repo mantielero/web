@@ -833,6 +833,103 @@ Creamos un proyecto y accedemos a él.
 1. Autentificación > Método de acceso: habilitamos el método email/password.
 2. Autentificación: arriba a la derecha **Configuración Web** y copiamos los detalles.
 
-# Vuex
+# Vuex - Funcionalidad de autorización
 
 > Note: I highly recommend to install extension for Chrome/Firefox called **Vue.js devtools**. This extension will help you in debugging your Vue.js application and to see what is happening in Vuex store.
+## Estado
+El estado lo asignamos:
+
+```js tab="estados"
+state: {
+  user: null,
+  error: null,
+  loading: false
+}
+```
+
+``` tab="mutaciones"
+mutations: {
+  setUser (state, payload) {
+    state.user = payload
+  },
+  setError (state, payload) {
+    state.error = payload
+  },
+  setLoading (state, payload) {
+    state.loading = payload
+  }
+}
+```
+
+en donde:
+
+- user: contiene información de usuario. Por defecto `null`
+- error: almacena mensajes de error. Por defecto `null`
+- loading: indica si la aplicación está cargando información. Por defecto `false`
+
+
+Las mutaciones sirven para cambiar el estado.
+
+## Vistas con datos
+Para que la vista guarde su información en variables, le asignamos un `v-model`.
+
+```vue tab="components/Signup.vue" hl_lines="16 25 35 51 52 53 54 55 56 57"
+<template>
+  <v-container fluid>
+    <v-layout row wrap>
+      <v-flex xs12 class="text-xs-center" mt-5>
+        <h1>Sign Up</h1>
+      </v-flex>
+      <v-flex xs12 sm6 offset-sm3 mt-3>
+        <form>
+          <v-layout column>
+            <v-flex>
+              <v-text-field
+                name="email"
+                label="Email"
+                id="email"
+                type="email"
+                v-model="email"
+                required></v-text-field>
+            </v-flex>
+            <v-flex>
+              <v-text-field
+                name="password"
+                label="Password"
+                id="password"
+                type="password"
+                v-model="password"
+                required></v-text-field>
+            </v-flex>
+            <v-flex>
+              <v-text-field
+                name="confirmPassword"
+                label="Confirm Password"
+                id="confirmPassword"
+                type="password"
+                v-model="passwordConfirm"
+                required
+                ></v-text-field>
+            </v-flex>
+            <v-flex class="text-xs-center" mt-5>
+              <v-btn color="primary" type="submit">Sign Up</v-btn>
+            </v-flex>
+          </v-layout>
+        </form>
+      </v-flex>
+    </v-layout>
+  </v-container>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      email: '',
+      password: '',
+      passwordConfirm: ''
+    }
+  }
+}
+</script>
+```
