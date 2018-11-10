@@ -24,7 +24,9 @@ nav:
     - Vue: pwa_vue.md
   - UI Components:
     - Intro: ui_intro.md
-  - Tutoriales:
+  - Tutorial Vue:
+    - Infraestructura: tut_vue_infraestructura.md
+    - Código fuente: tut_vue_source_code.md
     - PWA Vue Webpack MDL: tut_pwa_vue_webpack_mdl.md
 
 markdown_extensions:
