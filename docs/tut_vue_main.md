@@ -114,3 +114,24 @@ const unsubscribe = firebase.auth()
 No entiendo bien este código.
 
 > This code is explained [here](https://stackoverflow.com/questions/37370224/firebase-stop-listening-onauthstatechanged), [here](https://forum.vuejs.org/t/firebase-auth-and-vue-router/3086/3) and [here](https://groups.google.com/forum/?hl=vi#!topic/firebase-talk/836OyVNd_Yg). Long story short, we call our Vue instance after observer onAuthStateChanged finish a check. And after resolving user’s state we stop the observer by calling unsubscribe().
+
+Por un lado se crea la instancia de Vue y se monta en `#app`:
+
+??? "Objeto Vue"
+    ```js hl_lines="3 4 5 6 7 8 9 10 11 12 13 14"
+    const unsubscribe = firebase.auth()
+      .onAuthStateChanged((firebaseUser) => {
+        new Vue({
+          //el: '#app',
+          router,
+          store,
+          render: h => h(App),
+          created () {
+            if (firebaseUser) {
+              store.dispatch('autoSignIn', firebaseUser)
+            }
+          }
+        }).$mount('#app')
+        unsubscribe()
+    })
+    ```
