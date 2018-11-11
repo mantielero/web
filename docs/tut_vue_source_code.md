@@ -149,6 +149,12 @@ router.beforeEach((to, from, next) => {
 export default router
 ```
 
+Los ficheros son:
+
+- `main.js`: es el punto de entrada a la aplicación. Llama a la aplicación `App.vue`, al store vuex, el router, inicializa firebase y vue.
+- `router.js`: indica las vistas y las rutas adecuadas.
+- `store.js`: contiene el store basado en Vuex. Pero también importa Firebase para poder hacer la autentificación y el router para poder ir a la vista deseada.
+
 ### Vistas
 La vista principal es:
 
