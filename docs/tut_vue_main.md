@@ -1,26 +1,26 @@
 # Detalles: `src/main.js`
 ## Código
 ??? "./src/main.js"
-   ```js
-   import Vue from 'vue'
-   import './plugins/vuetify'
-   import App from './App.vue'
-   import router from './router'
-   import store from './store'
-   import firebase from 'firebase'
+    ```js
+    import Vue from 'vue'
+    import './plugins/vuetify'
+    import App from './App.vue'
+    import router from './router'
+    import store from './store'
+    import firebase from 'firebase'
 
 
-   firebase.initializeApp({
+    firebase.initializeApp({
      apiKey: "AIzaSyBZXlv0CUZBdPWvyzzi2eaBlXT764hoIDM",
      authDomain: "prueba-28ec5.firebaseapp.com",
      databaseURL: "https://prueba-28ec5.firebaseio.com",
      projectId: "prueba-28ec5"
-   })
+    })
 
-   /* eslint-disable */
-   Vue.config.productionTip = false
+    /* eslint-disable */
+    Vue.config.productionTip = false
 
-   const unsubscribe = firebase.auth()
+    const unsubscribe = firebase.auth()
      .onAuthStateChanged((firebaseUser) => {
        new Vue({
          //el: '#app',
@@ -34,8 +34,8 @@
          }
        }).$mount('#app')
        unsubscribe()
-   })
-   ```
+    })
+    ```
 
 ## Importaciones
 Importamos:
