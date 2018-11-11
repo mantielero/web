@@ -559,22 +559,23 @@ En los `<v-list-tile>` puede tener propiedades como:
 - `v-for`: hace un bucle para pintar tiles
 
 
-???vue tab="v-list"
-<v-list>
-  <v-list-tile
-    v-for="item in menuItems"
-    :key="item.title"
-    :to="item.path">
-    <v-list-tile-action>
-      <v-icon>{{ item.icon }}</v-icon>
-    </v-list-tile-action>
-    <v-list-tile-content>{{ item.title }}</v-list-tile-content>
-  </v-list-tile>
-  <v-list-tile @click="userSignOut" v-if="isAuthenticated">
-    <v-list-tile-action>
-      <v-icon>exit_to_app</v-icon>
-    </v-list-tile-action>
-    <v-list-tile-content>Sign Out</v-list-tile-content>
-  </v-list-tile>
-</v-list>
-???
+??? v-list example
+    ```vue
+    <v-list>
+      <v-list-tile
+        v-for="item in menuItems"
+        :key="item.title"
+        :to="item.path">
+        <v-list-tile-action>
+          <v-icon>{{ item.icon }}</v-icon>
+        </v-list-tile-action>
+        <v-list-tile-content>{{ item.title }}</v-list-tile-content>
+      </v-list-tile>
+      <v-list-tile @click="userSignOut" v-if="isAuthenticated">
+        <v-list-tile-action>
+          <v-icon>exit_to_app</v-icon>
+        </v-list-tile-action>
+        <v-list-tile-content>Sign Out</v-list-tile-content>
+      </v-list-tile>
+    </v-list>
+    ```
