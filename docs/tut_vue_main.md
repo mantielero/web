@@ -80,13 +80,14 @@ Esta información se consigue:
 
 
 ## Production Tip
-Lo siguiente:
+Lo siguiente se explica [aquí](https://vuejs.org/v2/api/#productionTip):
 
 ```js
 Vue.config.productionTip = false
 ```
 
-¿qué hace?
+> Set this to false to prevent the production tip on Vue startup.
+
 
 ## Hacemos
 
@@ -110,6 +111,6 @@ const unsubscribe = firebase.auth()
 })
 ```
 
-es complicado de explicar.
+No entiendo bien este código.
 
-Por un lado,
+> This code is explained [here](https://stackoverflow.com/questions/37370224/firebase-stop-listening-onauthstatechanged), [here](https://forum.vuejs.org/t/firebase-auth-and-vue-router/3086/3) and [here](https://groups.google.com/forum/?hl=vi#!topic/firebase-talk/836OyVNd_Yg). Long story short, we call our Vue instance after observer onAuthStateChanged finish a check. And after resolving user’s state we stop the observer by calling unsubscribe().
