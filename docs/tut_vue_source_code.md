@@ -490,3 +490,91 @@ export default {}
 export default {}
 </script>
 ```
+
+En estas vistas, observamos que todos los componentes (o vistas) tienen dos partes:
+
+- El `<template>`
+- El `<script>`
+
+Dentro de `<template>` hay un contenedor: `<v-container fluid>` (la propiedad *fluid* extiendo al ancho completo).
+
+Dentro de `<v-container fluid>` tenemos el componente `<v-layout row wrap>`. Sirve para separar secciones. Contiene las propiedades:
+
+- row: pone flex direction a row
+- wrap: allows children to wrap within the container if the elements use more than 100%.
+
+Dentro de `<v-layout>` tendremos `<v-flex>` (puede haber varias instancias de `v-flex`). Que ajusta el [grid](https://vuetifyjs.com/en/layout/grid). Entre las posibles propiedades tenemos:
+
+- (size)(1-12): (ej. xs12) en donde el tamaño puede ser:
+
+  - xs: extra small
+  - sm: small
+  - md: medium
+  - lg: large
+  - xl: extra large
+
+- [Spacing](https://vuetifyjs.com/en/layout/spacing): por ejemplo, `mt-5` pone un margen superior de 5. En el enlace viene un playground para ver el ajuste adecuado.
+
+Ajustar el [alineamiento](https://vuetifyjs.com/en/layout/alignment) del texto mediante `class="lo que sea"`:
+
+```html
+<p class="text-lg-right">Right align on large viewport sizes</p>
+<p class="text-md-center">Center align on medium viewport sizes</p>
+<p class="text-sm-left">Left align on small viewport sizes</p>
+<p class="text-xs-center">Center align on all viewport sizes</p>
+<p class="text-xs-right">Right align on all viewport sizes</p>
+```
+
+- lg: pantallas grandes
+- md: pantallas medianas
+- sm: pantallas pequeñas
+- xs: todas las pantallas
+
+
+Dentro de flex, tenemos componentes como:
+
+- `<h1>`: heading
+- `<p>`: párrafo
+- `<form>`: dentro puede haber `v-layout` con los correspondientes `flex`.
+- `<v-text-field>`:
+- `<v-btn>`:
+- `<v-alert>`:  
+
+
+### Aplicación
+La página principal de la aplicación es un poco especial.
+
+Dentro de `<template>` tenemos `<v-app>`. Dentro tendremos componentes.
+
+
+Digno de mención es la lista. La lista comienza con `<v-list>` y después contiene tiles `<v-list-tile>`. Dentro del tile podemos tener:
+
+- `<v-list-tile-action>`: dentro tenemos `<v-icon>`
+- `<v-list-tile-content>`
+
+En los `<v-list-tile>` puede tener propiedades como:
+
+- `@click=`: indica la función a la que llamará cuando se haga click en el elemento.
+- `v-if`: muestra el tile si el valor de la variable asociada es verdadero.
+- `v-for`: hace un bucle para pintar tiles
+
+
+???vue tab="v-list"
+<v-list>
+  <v-list-tile
+    v-for="item in menuItems"
+    :key="item.title"
+    :to="item.path">
+    <v-list-tile-action>
+      <v-icon>{{ item.icon }}</v-icon>
+    </v-list-tile-action>
+    <v-list-tile-content>{{ item.title }}</v-list-tile-content>
+  </v-list-tile>
+  <v-list-tile @click="userSignOut" v-if="isAuthenticated">
+    <v-list-tile-action>
+      <v-icon>exit_to_app</v-icon>
+    </v-list-tile-action>
+    <v-list-tile-content>Sign Out</v-list-tile-content>
+  </v-list-tile>
+</v-list>
+???

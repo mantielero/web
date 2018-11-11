@@ -14,6 +14,7 @@ El objetivo va a ser crear una aplicación que sea una agenda que:
 - Routing
 - Guardar información firebase
 
+> Me gustaría algo así: [dynalist](https://dynalist.io)
 
 ### Estructura
 La estructura creada:
