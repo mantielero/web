@@ -148,6 +148,7 @@ Las [acciones](https://vuex.vuejs.org/guide/actions.html) son similares a las mu
 
 
 #### userSignUp
+Esta función es la que hace el SignUp
 
 ```js
 userSignUp ({commit}, payload) {
@@ -165,7 +166,9 @@ userSignUp ({commit}, payload) {
 },
 ```
 
-### userSignIn
+#### userSignIn
+Esta función es la que hace el SignIn
+
 ```js
 userSignIn ({commit}, payload) {
   commit('setLoading', true)
@@ -183,7 +186,8 @@ userSignIn ({commit}, payload) {
 },
 ```
 
-### autoSignIn
+#### autoSignIn
+Esta función es la que se llama cuando se hace una recarga?
 
 ```js
 autoSignIn ({commit}, payload) {
@@ -191,7 +195,8 @@ autoSignIn ({commit}, payload) {
 },
 ```
 
-### userSignOut
+#### userSignOut
+Esta función es la que se llama al hacer un SignOut
 
 ```js
 userSignOut ({commit}) {
@@ -202,6 +207,7 @@ userSignOut ({commit}) {
 ```
 
 ### Getters
+Los Getters se usan para computar estados derivados:
 
 ```js
 getters: {
