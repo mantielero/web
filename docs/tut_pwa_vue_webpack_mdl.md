@@ -15,6 +15,7 @@ El objetivo va a ser crear una aplicación que sea una agenda que:
 - Guardar información firebase
 
 > Me gustaría algo así: [dynalist](https://dynalist.io)
+[gingkoapp](https://gingkoapp.com/)
 
 ### Estructura
 La estructura creada:

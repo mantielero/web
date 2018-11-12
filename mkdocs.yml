@@ -29,6 +29,8 @@ nav:
     - Código fuente: tut_vue_source_code.md
     - Explicación: tut_vue_explicacion.md
     - main.js: tut_vue_main.md
+    - router.js: tut_vue_router.md
+    - store.js: tut_vue_store.md
     - PWA Vue Webpack MDL: tut_pwa_vue_webpack_mdl.md
 
 markdown_extensions:

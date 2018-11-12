@@ -115,6 +115,9 @@ No entiendo bien este código.
 
 > This code is explained [here](https://stackoverflow.com/questions/37370224/firebase-stop-listening-onauthstatechanged), [here](https://forum.vuejs.org/t/firebase-auth-and-vue-router/3086/3) and [here](https://groups.google.com/forum/?hl=vi#!topic/firebase-talk/836OyVNd_Yg). Long story short, we call our Vue instance after observer onAuthStateChanged finish a check. And after resolving user’s state we stop the observer by calling unsubscribe().
 
+
+Hay que analizarlo junto con `router` (la parte de `beforeEach`).
+
 ### Instancia de Vue
 Por un lado se crea la instancia de Vue y se monta en `#app` de `index.html`:
 
@@ -138,11 +141,10 @@ Por un lado se crea la instancia de Vue y se monta en `#app` de `index.html`:
     ```
 
 ### Observer
+
 Según la [documentación](https://firebase.google.com/docs/reference/js/firebase.auth.Auth#onAuthStateChanged), la función `onAuthStateChanged` devuelve la función `unsubscribe` para el observador.
 
-According to the documentation, the onAuthStateChanged() function returns
-
-    The unsubscribe function for the observer.
+According to the documentation, the `onAuthStateChanged()` function returns the `unsubscribe` function for the observer.
 
 So you can just:
 
