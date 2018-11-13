@@ -887,3 +887,6 @@ Modificamos `form`
 
 
 Ello implica que modifiquemos `store.js`:
+
+# Enlaces interesantes
+[Cómo escalar a aplicaciones grandes](https://medium.com/3yourmind/large-scale-vuex-application-structures-651e44863e2f)
