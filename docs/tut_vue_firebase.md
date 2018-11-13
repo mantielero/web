@@ -71,7 +71,7 @@ También importamos *vuefire*. Vuefire exige que definamos el objeto `firebase` 
 Lo primero es crear un borrador de la interfaz gráfica que queremos (algo sencillo: nombre y apellido):
 
 ??? "AddContact.vue"
-    ```vue hl_lines="46 47 48 49 50 51 52 53 54 55"
+    ```vue hl_lines="45 46 47 48 49 50 51 52 53 54"
     <template>
       <v-container fluid>
         <v-layout row wrap>
