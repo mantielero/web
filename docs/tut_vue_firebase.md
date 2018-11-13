@@ -133,6 +133,9 @@ Lo primero es crear un borrador de la interfaz gráfica que queremos (algo senci
     </script>
     ```
 
+### Faltan detalles
+Introducir la ruta para la página. Entrada en el menú.
+
 
 # Firestore
 [Firestore](https://savvyapps.com/blog/definitive-guide-building-web-app-vuejs-firebase)
